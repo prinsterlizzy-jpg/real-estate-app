@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Emperor Real Estate{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <div class="logo">E</div>
+    <h1>Emperor Real Estate</h1>
+  </div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+<div class="mobile-contact">
+  <a href="tel:+2348143891560">📞 Call</a>
+  <a href="https://wa.me/2348143891560" target="_blank">💬 WhatsApp</a>
+</div>
+<footer>
+  © Emperor Real Estate
+</footer>
+
+</body>
+</html>
