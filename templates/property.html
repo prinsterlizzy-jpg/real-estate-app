@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="property-detail">
+
+  <img src="{{ url_for('static', filename='images/' ~ prop.image) }}" class="hero-img">
+
+  <h2>{{ prop.price }}</h2>
+  <p>{{ prop.title }}</p>
+  <p>Location: {{ prop.location }}</p>
+<a href="https://wa.me/2348143891560?text=Hello,%20I%20am%20interested%20in%20{{ prop.title }}%20at%20{{ prop.location }}"
+   class="btn"
+   target="_blank">
+   WhatsApp Agent
+</a>
+  <a href="https://wa.me/2348143891560" class="btn">
+    WhatsApp Agent
+  </a>
+
+</section>
+{% endblock %}
