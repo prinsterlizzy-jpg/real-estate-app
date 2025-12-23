@@ -1,0 +1,39 @@
+<form method="GET" class="searchbar">
+  <input type="search" name="q" placeholder="Search location (Ibadan, Lagos)">
+  
+  <select name="price">
+    <option value="">Any Price</option>
+    <option value="130000">Under ₦130k</option>
+    <option value="150000">Under ₦150k</option>
+  </select>
+
+  <button type="submit" class="btn primary">Search</button>
+</form>
+{% extends "base.html" %}
+{% block title %}Listings{% endblock %}
+
+{% block content %}
+<section class="grid">
+
+  {% for p in properties %}
+  <article class="card">
+    <a href="/property/{{ p.id }}">
+      <div class="media">
+        <img src="{{ url_for('static', filename='images/' ~ p.image) }}" alt="">
+        <div class="badge">{{ p.badge }}</div>
+      </div>
+
+      <div class="card-body">
+        <div class="price">{{ p.price }}</div>
+        <div class="title">{{ p.title }}</div>
+      </div>
+
+      <div class="card-footer">
+        📍 {{ p.location }}
+      </div>
+    </a>
+  </article>
+  {% endfor %}
+
+</section>
+{% endblock %}
